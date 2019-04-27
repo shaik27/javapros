@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+    	http://www.springframework.org/schema/beans/spring-beans.xsd
+    	http://www.springframework.org/schema/context
+    	http://www.springframework.org/schema/context/spring-context.xsd
+    	http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+		<bean name="user1" class="org.cts.User">
+			<property name="uname" value="ksrao"/>
+			<property name="email" value="ksrao@gmail.com"/>
+		</bean>
+		<bean name="user2" class="org.cts.User">
+			<property name="uname" value="ksrao1"/>
+			<property name="email" value="ksrao1@gmail.com"/>
+		</bean>
+		<bean name="answer1" class="org.cts.Answer">
+			<property name="answer" value="java is a language"/>
+			<property name="postedDate" value="12/22/2006"/>
+		</bean>
+		<bean name="answer2" class="org.cts.Answer">
+			<property name="answer" value="java is a cookie"/>
+			<property name="postedDate" value="1/22/2005"/>
+		</bean>
+		<bean name="question" class="org.cts.Question">
+			<property name="name" value="what is java"/>
+			<property name="answers">
+				<map>
+					<entry key-ref="user1" value-ref="answer1"/>
+					<entry key-ref="user2" value-ref="answer2"/>
+				</map>
+			</property>
+		</bean>
+</beans>
+
+
+
+
+
